@@ -1,0 +1,10 @@
+:root{
+  --body-background: #f8f8f8;
+  --body-foreground: #111;
+  --header-background: #69c;
+  --footer-background: #ccc;
+  --footer-foreground: #999;
+  --more-link: lime;
+  --navitems-background: firebrick;
+  --navitems-links: #000;
+}

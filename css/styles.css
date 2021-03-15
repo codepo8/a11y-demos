@@ -1,35 +1,90 @@
-@media (prefers-reduced-motion: reduce) {
-  :root {
-    --nomotion: none;
-  }
-}
-
 html {
-  scroll-behavior: var(--animation, smooth);
+  scroll-behavior: smooth;
 }
 body {
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: var(--body-background);
   color: var(--body-foreground);
   margin: 0;
   padding: 0;
 }
 header {
-  display:flex;
+  display: flex;
   background: var(--header-background);
-  margin-bottom: 1em;
   padding: .5em 1em;
   min-height: 2vh;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  z-index: 2;
 }
-header h1 {
-  flex: 1;
-  font-size: 1.1em;
-  margin:0;
-  padding: 0;
+#sidebar {
+  flex: 1;  
+  order: 2;
+  min-width: 10em;
+  padding: 0 1em;
+  margin-top: 2em;
 }
+main {
+  flex: 6;
+  order: 3;
+  min-width: 20em;
+  margin-top: 1em;
+}
+section {
+  min-height: 88vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+article {
+  padding: 1em 2em 0 1em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+article img {
+  flex: 0 0 100%;
+  width: 100%;
+  height: auto;
+}
+@media all and (min-width: 600px) {
+  article img {
+    max-width: 25%;
+    height: 100%;
+    flex: 2;
+    display: inline-block;
+ }
+}
+.articletext {
+  flex: 4;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+article:nth-child(even) .articletext {
+  order: 1;
+}
+article:nth-child(even) img {
+  order: 2;
+}
+article:nth-child(even) .more {
+  align-self: flex-start;
+}
+
+article:first-of-type {
+  padding-top: 0;
+}
+footer {
+  padding: 5px 10px;
+  min-height: 10vh;
+  display: block;
+  margin-top: 1em;
+  font-size: .8em;
+  background: var(--footer-background);
+  color: var(--footer-foreground);
+}
+
+/* =forms */ 
 header form {
   align-items: center;
   display: flex;
@@ -43,128 +98,16 @@ header label {
 header input[type=search] {
   flex: 2;
   font-family: inherit;
+  font-size: 1em;
   border: none;
 }
 header input[type=submit] {
   flex: 1;
   font-family: inherit;
   border: none;
-}
-#sidebar {
-  flex: 1;  
-  order: 1;
-  min-width: 10em;
-  padding-left: 1em;
-}
-main {
-  flex: 6;
-  order: 2;
-  min-width: 20em;
-}
-nav ul {
-  margin: 0;
-  padding: 0;
-}
-nav li {
-  margin: 0 0 5px 0;
-  padding: .2em;
-  background: var(--navitems-background);
-  position: relative;
-}
-nav li a {
-  color: var(--navitems-links);
-  text-decoration: none;
-  z-index: 2;
-  display: block;
-  position: relative;
-}
-nav li::after{
-  position: absolute;
-  z-index: 1;
-  content: '';
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 100%;
-  background: var(--navhover-background);
-  transition: 400ms;
-}
-nav li:hover::after {
-  position: absolute;
-  z-index: 1;
-  content: '';
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: var(--navhover-background);
-}
-#sidebar li::marker {
-  content: '';
-}
-section {
-  min-height: 88vh;
-  display: flex;
-  flex-wrap: wrap;
-}
-article img {
-  flex: 0 0 100%;
-  width: 100%;
-  height: auto;
-}
-@media all and (min-width: 600px) {
-  article img {
-    max-width: 25%;
-    height: 100%;
-    flex: 2;
-    display: inline-block;
-}
-}
-.articletext {
-  flex: 4;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-.articletext p {
-  margin: 0;
-  padding: 0 0 .5em 0;
-  line-height: 1.3;
-}
-article {
-  padding: 1em 2em 0 1em;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-article:first-of-type {
-  padding-top: 0;
-}
-footer {
-  padding: 5px 10px;
-  min-height: 10vh;
-  display: block;
-  margin-top: 1em;
-  font-size: .8em;
-  background: var(--footer-background);
-  color: var(--footer-foreground);
-}
-h2 {
-  flex: 0 0 100%;
-  margin: 0 0 .5em 0;
-}
-.more {
-  color: var(--more-link);
-  align-self: flex-end;
-}
-.more svg {
-  fill: inherit;
-  width: 2em;
-  height: 2em;
-}
-.more:hover svg {
-  transform: scale(1.5);
-  transition: 400ms;
+  font-size: 1em;
+  background: var(--donation-submit);
+  color: var(--donation-button-color);
 }
 #donate {
   font-size: .8em;
@@ -199,7 +142,7 @@ h2 {
   flex: 1;
   text-align: center;
 }
-.other {
+.freedonation {
   flex: 3;
 }
 .smallinput {
@@ -207,6 +150,106 @@ h2 {
   border: none;
   flex: 1;
   font-family: inherit;
+}
+
+/* =navigation */
+
+#sitenavigation {
+  order: 1;
+  z-index: 2;
+  flex: 0 0 100%;
+  background: var(--sitenav-background);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 2.3em;
+}
+#sitenavigation ul {
+  display: flex;
+  margin: 0 0 0 1em;
+  padding: 0;
+  flex-direction: row;
+  gap: 0;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+#sitenavigation li {
+  margin: 0;
+  padding: 0;
+}
+#sitenavigation a {
+  align-self: center;
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #fff;
+  text-shadow: 1px 0 2px #000;
+  position: relative;
+}
+#sitenavigation .current a, #sitenavigation a:hover {
+  background: var(--sitenav-current);
+  
+  color: #fff;
+}
+#sitenavigation .current a::after, #sitenavigation a:hover::after{
+  content: '▼';
+  position: absolute;
+  left: calc(50% - .5em);
+  bottom: -0.8em;
+  color: red;
+  text-shadow: none;
+}
+#sidebar nav ul {
+  margin: 0;
+  padding: 0;
+}
+#sidebar nav li {
+  margin: 0 0 5px 0;
+  padding: .2em;
+  background: var(--navitems-background);
+  position: relative;
+}
+#sidebar nav li a {
+  color: var(--navitems-links);
+  text-decoration: none;
+  z-index: 2;
+  display: block;
+  position: relative;
+}
+#sidebar nav li::after{
+  position: absolute;
+  z-index: 1;
+  content: '';
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 100%;
+  background: var(--navhover-background);
+  transition: 400ms;
+}
+#sidebar nav li:hover::after {
+  position: absolute;
+  z-index: 1;
+  content: '';
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: var(--navhover-background);
+}
+:is(#sidebar ,#sitenavigation) li::marker {
+  content: '';
+}
+/* =typography */
+header h1 {
+  flex: 1;
+  font-size: 1.1em;
+  margin:0;
+  padding: 0;
+}
+.articletext p {
+  margin: 0;
+  padding: 0 0 .5em 0;
+  line-height: 1.3;
 }
 .medium {
   color: var(--funding-medium);
@@ -216,4 +259,26 @@ h2 {
 }
 .low {
   color: var(--funding-low);
+}
+h2 {
+  flex: 0 0 100%;
+  margin: 0 0 .5em 0;
+}
+.more {
+  color: var(--more-link);
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+.more svg {
+  fill: inherit;
+  width: 1.5em;
+  height: 1.5em;
+}
+.more:hover svg {
+  transform: scale(1.5);
+  transition: 400ms;
 }

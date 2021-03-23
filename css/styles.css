@@ -16,7 +16,7 @@ header {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 3;
 }
 #sidebar {
   flex: 1;  
@@ -46,6 +46,7 @@ article img {
   flex: 0 0 100%;
   width: 100%;
   height: auto;
+  order: 2;
 }
 @media all and (min-width: 600px) {
   article img {
@@ -53,22 +54,14 @@ article img {
     height: 100%;
     flex: 2;
     display: inline-block;
- }
+  }
 }
 .articletext {
+  order: 1;
   flex: 4;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-}
-article:nth-child(even) .articletext {
-  order: 1;
-}
-article:nth-child(even) img {
-  order: 2;
-}
-article:nth-child(even) .more {
-  align-self: flex-start;
 }
 
 article:first-of-type {
@@ -119,7 +112,8 @@ header input[type=submit] {
 }
 #donate ul {
   margin: 0;
-  padding: 0;
+  background: var(--funding-background);
+  padding: 5px;
 }
 .donationbutton {
   background: var(--donation-button);
@@ -156,7 +150,7 @@ header input[type=submit] {
 
 #sitenavigation {
   order: 1;
-  z-index: 2;
+  z-index: 3;
   flex: 0 0 100%;
   background: var(--sitenav-background);
   position: -webkit-sticky;
@@ -181,21 +175,20 @@ header input[type=submit] {
   display: block;
   padding: 5px 10px;
   text-decoration: none;
-  color: #fff;
-  text-shadow: 1px 0 2px #000;
+  color: var(--sitenav-link);
+  text-shadow: var(--sitenav-textshadow);
   position: relative;
 }
 #sitenavigation .current a, #sitenavigation a:hover {
   background: var(--sitenav-current);
-  
-  color: #fff;
+  color: var(--sitenav-link-highlight);
 }
 #sitenavigation .current a::after, #sitenavigation a:hover::after{
   content: '▼';
   position: absolute;
   left: calc(50% - .5em);
   bottom: -0.8em;
-  color: red;
+  color: var(--sitenav-arrow);
   text-shadow: none;
 }
 #sidebar nav ul {
@@ -251,6 +244,7 @@ header h1 {
   padding: 0 0 .5em 0;
   line-height: 1.3;
 }
+
 .medium {
   color: var(--funding-medium);
 }

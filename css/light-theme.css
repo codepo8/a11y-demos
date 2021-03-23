@@ -5,6 +5,21 @@
   --footer-background: #ccc;
   --footer-foreground: #999;
   --more-link: lime;
-  --navitems-background: firebrick;
-  --navitems-links: #000;
+  --navitems-background: navy;
+  --navitems-links: #fff;
+  --navhover-background: dodgerblue;
+  --funding-medium: yellow;
+  --funding-high: green;
+  --funding-low: red;
+  --funding-color: #000;
+  --funding-background: #333;
+  --donation-button: darkslategray;
+  --donation-button-color: white;
+  --donation-submit: green;
+  --sitenav-current: linear-gradient(to bottom,orange,red);
+  --sitenav-background: linear-gradient(to top,orange,yellow);
+  --sitenav-textshadow: 1px 0 2px #000;
+  --sitenav-arrow: red;
+  --sitenav-link: #fff;
+  --sitenav-link-highlight: #fff;
 }

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test page to trigger the contrast display in Chromium DevTools</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .f {color: green;}
+    .b {background: grey};
+    .fb {
+      color: green;
+      background: grey;
+    }
+    .s {
+      text-shadow: 1px 1px 2px #000;
+    }
+    .bc {background: yellow;}
+    section {
+      border: 1px solid #000;
+      padding: 1em;
+      display: flex;
+      margin: 1em;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: stretch;
+    }
+    div {
+      text-align: center;
+      border: 1px solid #000;
+      width: 12em;
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <div class="f">Foreground Only</div>
+    <div class="b">Background Only</div>
+    <div class="f b">Foreground and Background different classes</div>
+    <div class="fb">Foreground And Background</div>
+    <div class="f s">Foreground And Shadow</div>
+  </section>
+  <section class="bc">
+    <div class="f">Foreground Only</div>
+    <div class="b">Background Only</div>
+    <div class="f b">Foreground and Background different classes</div>
+    <div class="fb">Foreground And Background</div>
+    <div class="f s">Foreground And Shadow</div>
+  </section>
+</body>
+</html>

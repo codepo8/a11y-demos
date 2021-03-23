@@ -7,7 +7,9 @@
   --more-link: lime;
   --navitems-background: mediumblue;
   --navitems-links: #fff;
-  --navhover-background: dodgerblue;
+  --navhover-background: green;
+  --navitems-link-current-background: skyblue; 
+  --navitems-link-current-foreground: #369; 
   --funding-medium: yellow;
   --funding-high: green;
   --funding-low: red;

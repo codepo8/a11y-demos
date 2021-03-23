@@ -4,10 +4,12 @@
   --header-background: #69c;
   --footer-background: #ccc;
   --footer-foreground: #999;
-  --more-link: lime;
+  --more-link: #ccc;
   --navitems-background: navy;
   --navitems-links: #fff;
   --navhover-background: dodgerblue;
+  --navitems-link-current-background: skyblue; 
+  --navitems-link-current-foreground: #369; 
   --funding-medium: yellow;
   --funding-high: green;
   --funding-low: red;

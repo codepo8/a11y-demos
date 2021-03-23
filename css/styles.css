@@ -201,7 +201,7 @@ header input[type=submit] {
 }
 #sidebar nav li {
   margin: 0 0 5px 0;
-  padding: .2em;
+  padding: 0 0 .2em 0;
   background: var(--navitems-background);
   position: relative;
 }
@@ -209,9 +209,16 @@ header input[type=submit] {
   color: var(--navitems-links);
   text-decoration: none;
   z-index: 2;
+  padding:.2em .5em;
   display: block;
   position: relative;
 }
+#sidebar nav li a:hover {
+  color: var(--navitems-link-current-foreground);
+  background: var(--navitems-link-current-background);
+  transition: 400ms;
+}
+
 #sidebar nav li::after{
   position: absolute;
   z-index: 1;
@@ -221,7 +228,7 @@ header input[type=submit] {
   bottom: 0;
   right: 100%;
   background: var(--navhover-background);
-  transition: 400ms;
+  transition: 600ms;
 }
 #sidebar nav li:hover::after {
   position: absolute;

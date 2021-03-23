@@ -46,7 +46,6 @@ article img {
   flex: 0 0 100%;
   width: 100%;
   height: auto;
-  order: 2;
 }
 @media all and (min-width: 600px) {
   article img {
@@ -57,7 +56,6 @@ article img {
   }
 }
 .articletext {
-  order: 1;
   flex: 4;
   display: flex;
   flex-wrap: wrap;
@@ -122,6 +120,11 @@ header input[type=submit] {
   padding: 2px 5px;
   flex: 1;
   text-align: center;
+  cursor: pointer;
+}
+.donationbutton.current {
+  background: var(--donation-button-chosen);
+  color: var(--donation-button-chosen-color);
 }
 .donationrow {
   display: flex;
@@ -129,6 +132,7 @@ header input[type=submit] {
   padding-bottom: 5px;
 }
 .submitbutton {
+  cursor: pointer;
   background: var(--donation-submit);
   color: var(--donation-button-color);
   display: inline-block;

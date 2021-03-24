@@ -57,6 +57,7 @@ article img {
 }
 .articletext {
   flex: 4;
+  color: black;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -147,6 +148,7 @@ header input[type=submit] {
   background: #ccc;
   border: none;
   flex: 1;
+  width: 5em;
   font-family: inherit;
 }
 

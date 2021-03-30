@@ -18,6 +18,7 @@
   --donation-button-color: white;
   --donation-submit: green;
   --donation-button-chosen: green;
+  --donation-button-focused: #1479a2;
   --donation-button-chosen-color: white;
   --sitenav-current: linear-gradient(to bottom,orange,red);
   --sitenav-background: linear-gradient(to top,orange,yellow);

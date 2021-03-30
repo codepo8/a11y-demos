@@ -125,17 +125,15 @@ header input[type=submit] {
 }
 
 .donationrow input[type=radio] + label {
-  background: #444444;
-  color: #ccc;
+  background: var(--donation-button);
+  color: var(--donation-button-color);
 }
-.donationrow input[type=radio]:checked + label,
-.donationrow input[type=radio]:focus {
-  background: #9AD284;
-  color: #000;
-}
-
-.donationrow label input[type="radio"]:checked {
+.donationrow input[type=radio]:checked + label {
   background: var(--donation-button-chosen);
+  color: var(--donation-button-chosen-color);
+}
+.donationrow input[type=radio]:focus-visible + label {
+  background: var(--donation-button-focused);
   color: var(--donation-button-chosen-color);
 }
 .donationrow {
@@ -250,7 +248,8 @@ header input[type=submit] {
   right: 0;
   background: var(--navhover-background);
 }
-#sidebar nav li a:hover {
+#sidebar nav li a:hover,
+#sidebar nav li a:focus {
   color: var(--navitems-link-current-foreground);
   background: var(--navitems-link-current-background);
 }

@@ -6,13 +6,14 @@
   <title>Demo page with accessibility issues</title>
   <link rel="stylesheet" href="css/light-theme.css" media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
   <link rel="stylesheet" href="css/dark-theme.css" media="(prefers-color-scheme: dark)">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles-fixed.css">
 </head>
 <body>
   <header>
     <h1>Animal shelter</h1>
     <form>
-      <label>Search <input type="search"></label>
+      <label for="search">Search</label>
+      <input type="search" id="search">
       <input type="submit" value="go"> 
     </form>
   </header>
@@ -109,16 +110,16 @@
       <div id="donate">
         <h3>Help us with a donation</h3>
         <div class="donationrow">
-          <div class="donationbutton">50</div>
-          <div class="donationbutton">100</div>
-          <div class="donationbutton">200</div>
+          <input type="radio" name="fixeddonation" value="50" id="l50"><label for="l50">50</label>
+          <input type="radio" name="fixeddonation" value="100" id="l100"><label for="l100">100</label>
+          <input type="radio" name="fixeddonation" value="200" id="l200"><label for="l200">200</label>
         </div>
         <div class="donationrow">
-          <span class="freedonation">Other</span>
+          <label for="freedonation">Other</label>
           <input id="freedonation" class="smallinput">
         </div>
         <div class="donationrow">
-          <div class="submitbutton">Donate</div>
+          <input type="submit" class="submitbutton" value="Donate">
         </div>
         
         <h3>Donation Status</h3>

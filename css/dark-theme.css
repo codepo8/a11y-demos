@@ -3,15 +3,15 @@
   --body-foreground: #eee;
   --header-background: #000;
   --footer-background: #000;
-  --footer-foreground: #666;
+  --footer-foreground: #969696;
   --more-link: lime;
   --navitems-background: mediumblue;
   --navitems-links: #fff;
   --navhover-background: green;
   --navitems-link-current-background: skyblue; 
-  --navitems-link-current-foreground: #369; 
+  --navitems-link-current-foreground: #1b3652; 
   --funding-medium: yellow;
-  --funding-high: green;
+  --funding-high: #00b900;
   --funding-low: red;
   --funding-color: #000;
   --donation-button: darkslategray;

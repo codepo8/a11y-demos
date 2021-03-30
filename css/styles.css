@@ -1,6 +1,3 @@
-html {
-  scroll-behavior: smooth;
-}
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: var(--body-background);
@@ -41,19 +38,13 @@ article {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  scroll-snap-margin-top: 5em;
+  scroll-margin-top: 5em;
 }
 article img {
   flex: 0 0 100%;
   width: 100%;
   height: auto;
-}
-@media all and (min-width: 600px) {
-  article img {
-    max-width: 25%;
-    height: 100%;
-    flex: 2;
-    display: inline-block;
-  }
 }
 .articletext {
   flex: 4;
@@ -61,7 +52,6 @@ article img {
   flex-wrap: wrap;
   flex-direction: column;
 }
-
 article:first-of-type {
   padding-top: 0;
 }
@@ -160,7 +150,7 @@ header input[type=submit] {
   background: var(--sitenav-background);
   position: -webkit-sticky;
   position: sticky;
-  top: 2.3em;
+  top: 2.8em;
 }
 #sitenavigation ul {
   display: flex;
@@ -245,19 +235,8 @@ header input[type=submit] {
 :is(#sidebar ,#sitenavigation) li::marker {
   content: '';
 }
-/* =typography */
-header h1 {
-  flex: 1;
-  font-size: 1.1em;
-  margin:0;
-  padding: 0;
-}
-.articletext p {
-  margin: 0;
-  padding: 0 0 .5em 0;
-  line-height: 1.3;
-}
 
+/* =fundingstatus */
 .medium {
   color: var(--funding-medium);
 }
@@ -267,9 +246,25 @@ header h1 {
 .low {
   color: var(--funding-low);
 }
+
+/* =typography */
+header h1 {
+  flex: 1;
+  font-size: 1.5em;
+  margin:0;
+  padding: 0;
+  font-weight: lighter;
+}
 h2 {
   flex: 0 0 100%;
+  font-weight: lighter;
   margin: 0 0 .5em 0;
+}
+
+.articletext p {
+  margin: 0;
+  padding: 0 0 .5em 0;
+  line-height: 1.3;
 }
 .more {
   color: var(--more-link);
@@ -288,4 +283,30 @@ h2 {
 .more:hover svg {
   transform: scale(1.5);
   transition: 400ms;
+}
+
+/* =mediaqueries */
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+article:target h2 {
+  animation: pop 1s;
+}
+@keyframes pop {
+  0% { opacity: 1; }
+  25% { opacity: 0.5; }
+  50% { opacity: 1; }
+  75% { opacity: 0.5; }
+  100% { opacity: 1 }
+}
+@media all and (min-width: 600px) {
+  article img {
+    max-width: 25%;
+    height: 100%;
+    flex: 2;
+    display: inline-block;
+  }
 }

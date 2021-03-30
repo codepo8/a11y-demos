@@ -9,10 +9,10 @@
   --navitems-links: #fff;
   --navhover-background: dodgerblue;
   --navitems-link-current-background: skyblue; 
-  --navitems-link-current-foreground: #369; 
-  --funding-medium: yellow;
-  --funding-high: green;
-  --funding-low: red;
+  --navitems-link-current-foreground: #1b3652; 
+  --funding-medium: #6d4700;
+  --funding-high: #005d00;
+  --funding-low: #a30000;
   --funding-color: #000;
   --funding-background: #eee;
   --donation-button: darkslategray;

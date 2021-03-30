@@ -2,8 +2,9 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: var(--body-background);
   color: var(--body-foreground);
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  max-width: 80em; 
 }
 header {
   display: flex;

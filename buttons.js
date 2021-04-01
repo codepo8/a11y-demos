@@ -14,6 +14,7 @@ sitenav.addEventListener('click', e => {
   }
 });
 
+
 donations.addEventListener('click', e => {
   let t = e.target;
   if (t.classList.contains('donationbutton')) {

@@ -2,6 +2,7 @@ const donations = document.querySelector('#donate');
 const sitenav = document.querySelector('#sitenavigation');
 let currentbutton = null;
 let currentnav = document.querySelector('#sitenavigation li');
+
 sitenav.addEventListener('click', e => {
   e.preventDefault();
   let t = e.target;

@@ -26,4 +26,4 @@ donations.addEventListener('click', e => {
   if (t.classList.contains('submitbutton')) {
     alert('Thanks for your donation!')
   } 
- })
+})

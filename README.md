@@ -2,6 +2,8 @@
 
 This is a repository showing a web site with accessibility problems and possible fixes for them. It is used in a video class on Skillshare.
 
+You can take the [Product Management: Tools for Improving Product Accessibility](https://skl.sh/3eCFWRR) if you want to, or use this repository for your own training needs.
+
 ## The problematic page
 
 The [page with errors](https://codepo8.github.io/a11y-demos/page-with-errors.html) example is the one shown the class and features a few issues to find out using automated accessibility tools and developer tools built into the browser.

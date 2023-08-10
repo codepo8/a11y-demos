@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehr Inhalte laden</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        a:focus {
+            background-color: yellow;
+        }
+
+        body>div {
+            margin: 4em;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        body>div.betterload {
+            justify-content: flex-start;
+
+        }
+
+        .button {
+            display: inline-block;
+            background-color: green;
+            color: white;
+            border: 1px solid #000;
+            border-radius: 0.5em;
+            padding: 0.5em;
+            font-family: inherit;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        ul {
+            columns: 2;
+        }
+
+        li {
+            padding: 0 3em 0 0;
+        }
+
+        a {
+            color: #369;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="dynamicload">
+        <div><span class="button">Unsere Hunde</span></div>
+        <div class="result"></div>
+    </div>
+
+    <div class="betterload">
+        <div>
+            <button class="button" type="button">Unsere Hunde</button>
+        </div>
+        <output class="result"></output>
+    </div>
+
+    <script>
+        const getdogs = out => {
+            fetch('hunde.json').then(response => {
+                return response.json();
+            }).then(data => {
+                let str = '<ul>';
+                data.dogs.forEach(dog => {
+                    str += `<li><a href="#">${dog}</a></li>`;
+                });
+                str += '</ul>';
+                out.innerHTML = str;
+            });
+        }
+        const getdogs2 = (t, old) => {
+            fetch('hunde.json').then(response => {
+                return response.json();
+            }).then(data => {
+                t.innerText = old;
+                let out = t.parentNode.parentNode.querySelector('output');
+                let str = '<ul>';
+                data.dogs.forEach(dog => {
+                    str += `<li><a href="#">${dog}</a></li>`;
+                });
+                str += '</ul>';
+                out.innerHTML = str;
+                out.querySelector('a').focus();
+            });
+        }
+
+
+        document.querySelector('.dynamicload').addEventListener('click', e => {
+            let t = e.target;
+            if (t.nodeName === 'SPAN') {
+                let out = t.parentNode.parentNode.querySelector('.result');
+                window.setTimeout(function () { getdogs(out) }, 1000)
+
+            }
+        });
+
+
+        document.querySelector('.betterload').addEventListener('click', e => {
+            let t = e.target;
+            if (t.nodeName === 'BUTTON') {
+                let old = t.innerText;
+                t.innerText += ' (lade…)';
+                window.setTimeout(function () { getdogs2(t, old) }, 1000)
+
+            }
+
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>

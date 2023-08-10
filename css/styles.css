@@ -288,7 +288,7 @@ h2 {
 
 /* =mediaqueries */
 
-@media (prefers-reduced-motion) {
+@media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
   }
